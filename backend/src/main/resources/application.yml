@@ -1,0 +1,36 @@
+spring:
+  application:
+    name: shop-mada-analytics-api
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/shop_mada}
+    username: ${SPRING_DATASOURCE_USERNAME:shop_mada}
+    password: ${SPRING_DATASOURCE_PASSWORD:shop_mada_dev}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+    properties:
+      hibernate:
+        jdbc:
+          "[time_zone]": UTC
+        "[format_sql]": true
+  jackson:
+    default-property-inclusion: non_null
+  web:
+    error:
+      include-message: never
+server:
+  port: ${SERVER_PORT:8080}
+  servlet:
+    session:
+      cookie:
+        same-site: strict
+        http-only: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+app:
+  cors:
+    allowed-origin: ${FRONTEND_ORIGIN:http://localhost:3000}

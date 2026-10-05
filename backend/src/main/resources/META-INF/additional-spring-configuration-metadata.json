@@ -1,0 +1,16 @@
+{
+  "groups": [
+    {
+      "name": "app.cors",
+      "type": "mg.shopmada.analytics.config.CorsConfig",
+      "sourceType": "mg.shopmada.analytics.config.CorsConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "app.cors.allowed-origin",
+      "type": "java.lang.String",
+      "sourceType": "mg.shopmada.analytics.config.CorsConfig"
+    }
+  ]
+}
